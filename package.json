@@ -4,7 +4,7 @@
   "description": "Run precommit in all package.json's in repo where there are staged changes",
   "main": "index.js",
   "scripts": {
-    "preinstall": "node index.js"
+    "postinstall": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
     "url": "https://github.com/wix-incubator/monorepo-staged-precommit/issues"
   },
   "homepage": "https://github.com/wix-incubator/monorepo-staged-precommit#readme",
-  "devDependencies": {
+  "dependencies": {
     "find-up": "^3.0.0",
     "is-ci": "^1.1.0",
     "pkg-dir": "^3.0.0"
