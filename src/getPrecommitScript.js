@@ -42,7 +42,7 @@ for staged in $STAGED; do
     fi
 done
 
-files=$(echo "\${list[ *]}" | sort -u)
+files=$(echo "\${list[*]}" | sort -u)
 
 set +f
 
