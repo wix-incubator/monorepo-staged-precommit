@@ -1,6 +1,6 @@
 {
   "name": "monorepo-staged-precommit",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Run precommit in all package.json's in repo where there are staged changes",
   "main": "index.js",
   "scripts": {
