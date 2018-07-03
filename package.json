@@ -17,9 +17,8 @@
   },
   "homepage": "https://github.com/wix-incubator/monorepo-staged-precommit#readme",
   "devDependencies": {
-    "find-up": "^3.0.0"
-  },
-  "dependencies": {
+    "find-up": "^3.0.0",
+    "is-ci": "^1.1.0",
     "pkg-dir": "^3.0.0"
   }
 }
