@@ -1,0 +1,28 @@
+# monorepo-staged-precommit
+
+This package adds script that runs the `precommit` script in all package.json's in repo where there are staged changes.
+
+Uses nvm use to use the correct node version for each project
+
+## Example
+Given monorepo:
+
+```
+- project
+  |
+  |-- projectA
+  |   |
+  |   |-- package.json
+  |
+  |-- projectB
+  |   |
+  |   |--package.json
+  |
+  |-- projectC
+```
+
+* When changing a file in projectA and staging it, the script will run the `precommit` script in `projectA/pacakge.json`.
+
+* When changing a file in projectA and projectB and staging them the script will run the `precommit` script in both `project/package.json` and `projectB/package.json`.
+
+* When changing a file in projectC and staging it nothing will run since projectC has no package.json.

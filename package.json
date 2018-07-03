@@ -1,0 +1,25 @@
+{
+  "name": "monorepo-staged-precommit",
+  "version": "1.0.0",
+  "description": "Run precommit in all package.json's in repo where there are staged changes",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wix-incubator/monorepo-staged-precommit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wix-incubator/monorepo-staged-precommit/issues"
+  },
+  "homepage": "https://github.com/wix-incubator/monorepo-staged-precommit#readme",
+  "devDependencies": {
+    "find-up": "^3.0.0"
+  },
+  "dependencies": {
+    "pkg-dir": "^3.0.0"
+  }
+}
