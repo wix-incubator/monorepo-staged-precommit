@@ -1,11 +1,10 @@
 {
   "name": "monorepo-staged-precommit",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "Run precommit in all package.json's in repo where there are staged changes",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "preinstall": "node dist/bundle.js"
+    "preinstall": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +19,6 @@
   "devDependencies": {
     "find-up": "^3.0.0",
     "is-ci": "^1.1.0",
-    "pkg-dir": "^3.0.0",
-    "webpack": "^4.14.0",
-    "webpack-cli": "^3.0.8"
+    "pkg-dir": "^3.0.0"
   }
 }
