@@ -15,5 +15,6 @@ const preCommitFilePath = `${gitDirectory}/hooks/pre-commit`;
 const {version} = require('./package.json');
 
 fs.writeFileSync(preCommitFilePath, getPrecommitScripts(version));
+fs.chmodSync(preCommitFilePath, '755');
 
 console.log('Added precommit hook');
