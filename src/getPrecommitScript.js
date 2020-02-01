@@ -1,7 +1,5 @@
-function getPrecommitScripts(version) {
-  return `
-#!/bin/sh
-# monorepo-staged-precommit ${version}
+function getPrecommitScript(fileHeader, version) {
+  return `# ${fileHeader} ${version}
 
 command_exists () {
   command -v "$1" >/dev/null 2>&1
@@ -72,7 +70,7 @@ for file in $files; do
 done
 
 exit $exitCode
-`;
+# end ${fileHeader}`;
 }
 
-module.exports = {getPrecommitScripts};
+module.exports = {getPrecommitScript};
