@@ -1,6 +1,6 @@
 const findUp = require('find-up');
 const fs = require('fs');
-const {getPrecommitScripts} = require('./src/getPrecommitScript');
+const {getPrecommitScript} = require('./src/getPrecommitScript');
 const isCI = require('is-ci');
 
 if (isCI) {
