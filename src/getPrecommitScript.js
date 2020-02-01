@@ -69,7 +69,10 @@ for file in $files; do
     cd -
 done
 
-exit $exitCode
+if [ $exitCode == 1 ]
+then
+  exit 1
+fi
 # end ${fileHeader}`;
 }
 
