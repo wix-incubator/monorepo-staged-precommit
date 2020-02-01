@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const findUp = require('find-up');
 const fs = require('fs');
 const {getPrecommitScript} = require('./src/getPrecommitScript');

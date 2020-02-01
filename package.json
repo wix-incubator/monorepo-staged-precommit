@@ -1,6 +1,6 @@
 {
   "name": "monorepo-staged-precommit",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Run precommit in all package.json's in repo where there are staged changes",
   "main": "index.js",
   "scripts": {
@@ -20,5 +20,8 @@
     "find-up": "^3.0.0",
     "is-ci": "^1.1.0",
     "pkg-dir": "^3.0.0"
+  },
+  "bin": {
+    "wixstores-server-precommit": "index.js"
   }
 }
