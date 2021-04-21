@@ -7,7 +7,7 @@ command_exists () {
 
 command_exists npm || {
   echo >&2 "precommit > can't find npm in PATH, skipping precommit git hook"
-  exit 0
+  exit 1
 }
 
 STAGED=\`git diff --name-only --cached\`
