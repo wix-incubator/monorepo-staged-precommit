@@ -44,10 +44,16 @@ files=$(echo "\${list[*]}" | sort -u)
 
 set +f
 
-export NVM_DIR="$HOME/.nvm"; . "$NVM_DIR/nvm.sh";
-
 command_exists nvm
 hasNvm=$?
+if [ $hasNvm == 0 ]
+then
+    export NVM_DIR="$HOME/.nvm"; . "$NVM_DIR/nvm.sh";
+fi
+
+command_exists fnm
+hasFnm=$?
+
 
 nvmrc=".nvmrc"
 
@@ -58,7 +64,13 @@ for file in $files; do
     echo "[$fileDirectory] > npm run -s precommit"
     cd $fileDirectory
     if [ -f $nvmrc ]; then
-        nvm use
+        if [ $hasNvm == 0 ]
+        then
+            nvm use
+        elif [ $hasFnm == 0 ]
+        then
+            fnm use
+        fi
     fi
 
     npm run -s precommit || {
