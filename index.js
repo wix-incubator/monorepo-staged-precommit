@@ -1,17 +1,16 @@
 #!/usr/bin/env node
-const findUp = require('find-up');
 const fs = require('fs');
 const {getPrecommitScript} = require('./src/getPrecommitScript');
 const isCI = require('is-ci');
+const {execSync} = require('child_process');
 
 if (isCI) {
   console.log('Skipped precommit hook installation on CI');
   return;
 }
 
-const gitDirectory = findUp.sync('.git');
-
-const preCommitFilePath = `${gitDirectory}/hooks/pre-commit`;
+const hooksDirectory = execSync('git rev-parse --git-path hooks', {encoding: 'utf8'}).replace('\n', '');
+const preCommitFilePath = `${hooksDirectory}/pre-commit`;
 const {version} = require('./package.json');
 
 const FILE_HEADER = "monorepo-staged-precommit";
